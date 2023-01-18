@@ -87,4 +87,6 @@ alembic upgrade head
 
 
 ## 보너스
-컬럼에 nullable=False 추가해보기
+### 컬럼에 nullable=False 추가해보기
+안타깝게도 sqlite에는 `ALTER TABLE ALTER COLUMN` 문 자체가 없다.
+postgresql로 진행하면 될듯
