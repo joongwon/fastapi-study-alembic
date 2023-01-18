@@ -6,11 +6,12 @@ class ItemBase(BaseModel):
     description: Union[str, None] = None
 
 class ItemCreate(ItemBase):
-    pass
+    price: int
 
 class Item(ItemBase):
     id: int
     owner_id: int
+    price: Union[int, None] = None
 
     class Config:
         orm_mode = True
