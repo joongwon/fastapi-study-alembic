@@ -88,5 +88,19 @@ alembic upgrade head
 
 ## 보너스
 ### 컬럼에 nullable=False 추가해보기
+```python
+class Item(BaseModel):
+    title = Column(String, index=True, nullable=False)
+```
 안타깝게도 sqlite에는 `ALTER TABLE ALTER COLUMN` 문 자체가 없다.
-postgresql로 진행하면 될듯
+postgresql로 진행하면 될듯. database.py랑 alembic.ini 수정했다.
+이전에 생성한 테이블이 있어서 지우고 진행. 성공
+```
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 44a7dab1d587, Add user and item table
+INFO  [alembic.runtime.migration] Running upgrade 44a7dab1d587 -> eda70f402b62, Add items.price column
+INFO  [alembic.runtime.migration] Running upgrade eda70f402b62 -> 29495339f15c, change items.title to non-nullable
+```
+
+한편 이미 null 항목이 있는 컬럼에 추가해본다면??
