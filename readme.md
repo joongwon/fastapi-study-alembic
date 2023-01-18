@@ -104,3 +104,7 @@ INFO  [alembic.runtime.migration] Running upgrade eda70f402b62 -> 29495339f15c, 
 ```
 
 한편 이미 null 항목이 있는 컬럼에 추가해본다면??
+```
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) column "description" of relation "items" contains null values
+```
+당연히 실패. 이때는 디비를 직접 수정하거나 해서 값을 다 설정해줘야 할 것이다.
