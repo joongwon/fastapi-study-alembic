@@ -93,7 +93,7 @@ sqlalchemy.url = sqlite:///./sql_app.db
 
 깔끔하게 하려면 비어있는 데이터베이스에서 시작하는 게 좋겠지만, 아무래도 기존 데이터도 유지하는 것이 좋겠다.
 비어있는 더미 데이터베이스를 만들고, 그 DB를 바탕으로 마이그레이션을 생성한다.
-수정했던 모델 파일을 다시 원래대로 돌려놓고 마이그레이션을 생성한다. (git에 잘 올려놨다면 checkout으로 되돌릴 수 있다!)
+수정했던 모델 파일을 다시 원래대로 돌려놓고 마이그레이션을 생성한다.
 ```ini
 # alembic.ini
 # sqlalchemy.url = sqlite:///./sql_app.db
@@ -119,7 +119,7 @@ alembic upgrade head # 마지막 인자는 revision 이름
 ---
 
 ## 다시 기존 데이터베이스로 연결해주고...
-모델에도 처음에 추가하고자 했던 price column을 다시 만들어준다. (역시 git checkout)
+모델에도 처음에 추가하고자 했던 price column을 다시 만들어준다.
 
 ---
 
